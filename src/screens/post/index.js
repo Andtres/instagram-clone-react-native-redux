@@ -1,16 +1,15 @@
-import React from 'react'
-import { SafeAreaView, Text } from 'react-native'
+//Dependencies
+import React from 'react';
+import { SafeAreaView } from 'react-native';
+//Component
+import Commentary from '../../components/commentary';
 
-
-
-function Post (){
-  return(
-    <SafeAreaView>
-      <Text>
-        Pagina Post
-      </Text>
-    </SafeAreaView>
-  )
+function Post() {
+	return (
+		<SafeAreaView>
+			<Commentary />
+		</SafeAreaView>
+	);
 }
 
-export default Post
+export default Post;
