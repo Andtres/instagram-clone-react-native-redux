@@ -1,10 +1,8 @@
 //Dependencies
 import React, { Component } from 'react';
 import { View, Text, Image, TouchableWithoutFeedback } from 'react-native';
-
 import Icon from 'react-native-vector-icons/Feather';
 //Styles
-import style from './styles';
 import styles from './styles';
 
 class Post extends Component {
@@ -27,28 +25,28 @@ class Post extends Component {
 				onPressIn={this.onPressed}
 				onPressOut={this.onPressOut}
 				onPress={onPress}>
-				<View style={[style.container, !pressed ? styles.withShadow : {}]}>
-					<View style={style.top}>
-						<View style={style.topLeft}>
+				<View style={[styles.container, !pressed ? styles.withShadow : {}]}>
+					<View style={styles.top}>
+						<View style={styles.topLeft}>
 							<Image
 								source={require('../../assets/images/font.jpg')}
-								style={style.userPhoto}
+								style={styles.userPhoto}
 							/>
-							<Text style={style.txtName}>Tesjrofjroifjrofj</Text>
+							<Text style={styles.txtName}>Tesjrofjroifjrofj</Text>
 						</View>
-						<Icon name='more-horizontal' style={style.iconTop} />
+						<Icon name='more-horizontal' style={styles.iconTop} />
 					</View>
 					<View>
 						<Image
 							source={require('../../assets/images/BeagleLove.jpg')}
-							style={style.imageBody}
+							style={styles.imageBody}
 						/>
 					</View>
-					<View style={style.footer}>
-						<Icon name='heart' style={style.iconFooter} />
-						<Icon name='message-circle' style={style.iconFooter} />
+					<View style={styles.footer}>
+						<Icon name='heart' style={styles.iconFooter} />
+						<Icon name='message-circle' style={styles.iconFooter} />
 
-						<Icon name='corner-up-right' style={style.iconFooter} />
+						<Icon name='corner-up-right' style={styles.iconFooter} />
 					</View>
 				</View>
 			</TouchableWithoutFeedback>
