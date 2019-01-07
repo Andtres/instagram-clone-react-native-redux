@@ -1,4 +1,5 @@
-[
+{
+  "posts" : [
     {
       "userId": 1,
       "photo": "https://clkde.tradedoubler.com/click?p=264311&a=3045532&g=24328740&url=https://stock.adobe.com/images/violino/48087759?as_channel=affiliate&as_campaign=pexels&as_source=arvato"
@@ -15,4 +16,5 @@
       "userId": 1,
       "photo": "https://clkde.tradedoubler.com/click?p=264311&a=3045532&g=24328740&url=https://stock.adobe.com/images/violino/48087759?as_channel=affiliate&as_campaign=pexels&as_source=arvato"
     }
-]
+  ]
+}
