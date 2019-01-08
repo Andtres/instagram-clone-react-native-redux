@@ -11,8 +11,10 @@ import Post from '../../components/post';
 
 class Home extends Component {
 	componentDidMount() {
-		const { getPosts } = this.props;
-		getPosts();
+		const { getPosts, getUsers, getComments } = this.props;
+		getPosts();		
+		getUsers();
+		getComments();
 	}
 	onPress = () => Actions[routes.POST_DETAIL]();
 	render() {

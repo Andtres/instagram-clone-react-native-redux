@@ -10,7 +10,9 @@ function mapStateToProps (store) {
 }
 
 const mapDispatchToProps = dispatch => ({
-	getPosts: userName => dispatch(postsActions.getPosts(userName))
+	getPosts: () => dispatch(postsActions.getPosts()),
+	getUsers: () => dispatch(postsActions.getUsers()), 	
+	getComments: () => dispatch(postsActions.getComments())
 })
 
 export default connect(
