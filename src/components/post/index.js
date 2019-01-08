@@ -19,7 +19,7 @@ class Post extends Component {
 
 	render() {
 		const { pressed } = this.state;
-		const { onPress } = this.props
+		const { onPress, photo, userName } = this.props;	
 		return (
 			<TouchableWithoutFeedback
 				onPressIn={this.onPressed}
@@ -29,17 +29,19 @@ class Post extends Component {
 					<View style={styles.top}>
 						<View style={styles.topLeft}>
 							<Image
-								source={require('../../assets/images/font.jpg')}
 								style={styles.userPhoto}
+								source={{
+									uri: photo										
+								}}
 							/>
-							<Text style={styles.txtName}>Tesjrofjroifjrofj</Text>
+							<Text style={styles.txtName}>{userName}</Text>
 						</View>
 						<Icon name='more-horizontal' style={styles.iconTop} />
 					</View>
 					<View>
 						<Image
-							source={require('../../assets/images/BeagleLove.jpg')}
 							style={styles.imageBody}
+							source={require('../../assets/images/BeagleLove.jpg')}
 						/>
 					</View>
 					<View style={styles.footer}>

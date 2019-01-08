@@ -1,7 +1,7 @@
 import { createActions } from 'reduxsauce'
 
 const { Types, Creators } = createActions({
-	getPosts: ['userName'],
+	getPosts: [],
   setPosts: ['posts']
 })
 
