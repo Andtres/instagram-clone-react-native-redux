@@ -3,10 +3,16 @@ import { connect } from 'react-redux'
 //Actions
 import postsActions from '../../redux/post/actions'
 
-const mapStateToProps = state => ({})
+function mapStateToProps (store) {
+  return {
+		posts: store.post.posts ? store.post.posts : []
+  }
+}
 
 const mapDispatchToProps = dispatch => ({
-	getPosts: userName => dispatch(postsActions.getPosts(userName))
+	getPosts: () => dispatch(postsActions.getPosts()),
+	getUsers: () => dispatch(postsActions.getUsers()), 	
+	getComments: () => dispatch(postsActions.getComments())
 })
 
 export default connect(

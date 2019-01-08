@@ -1,7 +1,16 @@
 //Get userName Instagram
-export const getPosts = userName =>
-	fetch(`https://www.instagram.com/${userName}/?__a=1`).then(response =>
-		response.json()
-  )
-  
+export const getPosts = () =>
+	fetch(
+		`https://raw.githubusercontent.com/Andtres/instagram-clone-react-native/master/src/data/posts.json`
+	).then(response => response.json());
+//Get Users
+export const getUsers = () =>
+	fetch(
+		`https://raw.githubusercontent.com/Andtres/instagram-clone-react-native/master/src/data/users.json`
+	).then(response => response.json());
+//Get comments
+export const getComments = () =>
+	fetch(
+		`https://raw.githubusercontent.com/Andtres/instagram-clone-react-native/master/src/data/comments.json`
+	).then(response => response.json());
 
