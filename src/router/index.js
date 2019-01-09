@@ -1,6 +1,7 @@
 //Dependencies
 import React, { Component } from 'react';
-import { Scene, Router, Stack } from 'react-native-router-flux';
+import { Scene, Router, Stack, Modal } from 'react-native-router-flux';
+import { Text } from 'react-native';
 //Screnns
 import Home from '../screens/home';
 import Post from '../screens/post';
@@ -11,10 +12,16 @@ class Navigation extends Component {
 	render() {
 		return (
 			<Router>
-				<Stack key='root'>
-					<Scene key={routes.HOME} component={Home} title='Home' />
-					<Scene key={routes.POST_DETAIL} component={Post} />
-				</Stack>
+				<Modal hideNavBar>
+					<Stack key='root'>
+						<Scene key={routes.HOME} component={Home} title='Home' />
+						<Scene
+							key={routes.POST_DETAILS}							
+							component={Post}				
+							direction='horizontal'			
+						/>						
+					</Stack>										
+				</Modal>
 			</Router>
 		);
 	}

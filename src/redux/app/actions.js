@@ -1,8 +1,7 @@
 import { createActions } from 'reduxsauce'
 
-const { Types, Creators } = createActions({
-	getPosts: null,
-  setPosts: ['posts']  
+const { Types, Creators } = createActions({  
+  setLoading: ['loading']
 })
 
 export { Types }

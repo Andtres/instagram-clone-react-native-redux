@@ -2,42 +2,27 @@
 import { takeLatest, put, all, call } from 'redux-saga/effects';
 //Actions
 import postActions, { Types } from './actions';
+import appActions from '../app/actions';
 //Get User Intagram
 import {
-	getPosts as getPostsService,
-	getUsers as getUsersService,
-	getComments as getCommentsService	
+	getHastagId as getHastagIdService,
+	getHastag as getHastagService,	
 } from './services';
 
-function* getPosts(action) {	
+function* getPosts() {	
+	yield put(appActions.setLoading(true))
 	try {
-		const posts = yield call(getPostsService);		
-		yield put(postActions.setPosts(posts));
+		const hastagId = yield call(getHastagIdService);
+		console.log('iddads', hastagId.data[0].id);
+		const hastag = yield call(getHastagService, hastagId)
+		console.log('datos', hastag); 		
+		yield put(postActions.setPosts(hastag.data));
 	} catch (error) {
 		console.log(error);
 	}
-}
-
-function* getUsers(action) {	
-	try {
-		const users = yield call(getUsersService);		
-		yield put(postActions.setUsers(users));
-	} catch (error) {
-		console.log(error);
-	}
-}
-
-function* getComments(action) {	
-	try {
-		const comments = yield call(getCommentsService);		
-		yield put(postActions.setComments(comments));
-	} catch (error) {
-		console.log(error);
-	}
+	yield put(appActions.setLoading(false)) 
 }
 
 export default all([
-	takeLatest(Types.GET_POSTS, getPosts),
-	takeLatest(Types.GET_USERS, getUsers),
-	takeLatest(Types.GET_COMMENTS, getComments)
+	takeLatest(Types.GET_POSTS, getPosts)
 ]);

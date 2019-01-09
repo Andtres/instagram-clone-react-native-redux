@@ -5,14 +5,13 @@ import postsActions from '../../redux/post/actions'
 
 function mapStateToProps (store) {
   return {
-		posts: store.post.posts ? store.post.posts : []
+		posts: store.post.posts ? store.post.posts : [],
+		isLoading: store.app.isLoading
   }
 }
 
 const mapDispatchToProps = dispatch => ({
-	getPosts: () => dispatch(postsActions.getPosts()),
-	getUsers: () => dispatch(postsActions.getUsers()), 	
-	getComments: () => dispatch(postsActions.getComments())
+	getData: () => dispatch(postsActions.getPosts())	
 })
 
 export default connect(
