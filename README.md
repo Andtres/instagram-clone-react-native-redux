@@ -7,7 +7,7 @@
 - React Native Extended StyleSheet
 - React Native Router Flux
 - React Native Vector Icons
-- react-native-snap-carousel
+- React Native Snap carousel
 
 # Requirements
 
