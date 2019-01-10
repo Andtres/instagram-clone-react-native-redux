@@ -11,7 +11,8 @@ function mapStateToProps(store) {
 }
 
 const mapDispatchToProps = dispatch => ({
-	getData: hashtag => dispatch(postsActions.getPosts(hashtag))
+	getData: hashtag => dispatch(postsActions.getPosts(hashtag)),
+	selectPost: post => dispatch(postsActions.selectPost(post))
 });
 
 export default connect(

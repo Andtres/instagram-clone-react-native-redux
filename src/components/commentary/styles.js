@@ -6,10 +6,10 @@ export default EStyleSheet.create({
   $avatar: 72,
   container: {
     flexDirection: 'row',
-    width: '95%',
-    height: 94,
+    width: '95%',    
     alignSelf: 'center',
-    marginVertical: 8          
+    marginVertical: 8,
+    marginBottom: 200          
   },
   left: {
     width: '30%',
@@ -31,12 +31,7 @@ export default EStyleSheet.create({
     backgroundColor: '$colors.purpure',
     borderBottomRightRadius: '$border',    
   },
-  userName: {
-    color: '$colors.white',
-    fontWeight: 'bold'
-  },
-  commentary: {
-    fontSize: 11,
+  caption: {
     color: '$colors.white'
   }
 });

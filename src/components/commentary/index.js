@@ -13,6 +13,7 @@ class Commentary extends Component {
 	}
 
 	render() {
+		const { commentary } = this.props
 		return (
 			<View style={styles.container}>
 				<View style={styles.left}>
@@ -20,13 +21,12 @@ class Commentary extends Component {
 						style={styles.avatar}
 						source={{
 							uri:
-								'https://images.pexels.com/photos/1009949/pexels-photo-1009949.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940'
+							'https://facebook.github.io/react-native/docs/assets/favicon.png'
 						}}
 					/>
 				</View>
-				<View style={styles.right}>
-        <Text style={styles.userName}>UserName</Text>
-        <Text style={styles.commentary}>Comentary</Text>
+				<View style={styles.right}>        
+        <Text style={styles.caption}>{commentary}</Text>
         </View>
 			</View>
 		);

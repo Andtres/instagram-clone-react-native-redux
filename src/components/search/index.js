@@ -11,13 +11,19 @@ class Search extends React.Component {
 				<TextInput
 					style={styles.input}
 					value={search}
-					onChangeText={(search) => change(search)}					
+					placeholder='Search'
+					onChangeText={search => change(search)}
+					ref={ref => (this.input = ref)}
 				/>
 				<Button
-					onPress={submitHastag}
+					onPress={() => {
+						this.input.blur()
+						submitHastag()
+						
+					}}
 					title='Search'
 					color='#841584'
-					styles={styles.button}					
+					styles={styles.button}
 				/>
 			</View>
 		);

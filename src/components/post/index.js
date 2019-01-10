@@ -5,8 +5,7 @@ import {
 	Text,
 	Image,
 	TouchableWithoutFeedback,
-	TouchableOpacity,
-	Dimensions
+	TouchableOpacity
 } from 'react-native';
 import Video from 'react-native-video';
 import Icon from 'react-native-vector-icons/Feather';
@@ -32,16 +31,22 @@ class Post extends Component {
 			media,
 			comments,
 			likes,
-			images,
 			muted,
-			onVolume
+			userName,
+			onVolume,
+			isFirst
 		} = this.props;
 		return (
 			<TouchableWithoutFeedback
 				onPressIn={this.onPressed}
 				onPressOut={this.onPressOut}
 				onPress={onPress}>
-				<View style={[styles.container, !pressed ? styles.withShadow : {}]}>
+				<View
+					style={[
+						styles.container,
+						!pressed ? styles.withShadow : {},
+						isFirst ? { marginTop: 0 } : {}
+					]}>
 					<View style={styles.top}>
 						<View style={styles.topLeft}>
 							<Image
@@ -51,7 +56,7 @@ class Post extends Component {
 										'https://facebook.github.io/react-native/docs/assets/favicon.png'
 								}}
 							/>
-							<Text style={styles.txtName}>{type}</Text>
+							<Text style={styles.txtName}>{userName}</Text>
 						</View>
 						<Icon name='more-horizontal' style={styles.iconTop} />
 					</View>
@@ -71,14 +76,6 @@ class Post extends Component {
 							style={styles.imageBody}
 							source={{
 								uri: media
-							}}
-						/>
-					)}
-					{type === 'CAROUSEL_ALBUM' && (
-						<Image
-							style={styles.imageBody}
-							source={{
-								uri: images.data[0].media_url
 							}}
 						/>
 					)}

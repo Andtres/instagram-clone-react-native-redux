@@ -17,7 +17,10 @@ export default EStyleSheet.create({
 	},
 	container: {
 		backgroundColor: '$colors.white',
-		marginVertical: 12
+		marginVertical: 12,
+		flex: 1,
+		position: 'relative',
+		zIndex: 1		
 	},
 	top: {
 		flexDirection: 'row',

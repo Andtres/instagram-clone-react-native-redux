@@ -6,23 +6,21 @@ import appActions from '../app/actions';
 //Get User Intagram
 import {
 	getHastagId as getHastagIdService,
-	getHastag as getHastagService,	
+	getHastag as getHastagService
 } from './services';
 
-function* getPosts({hashtag}) {	
-	yield put(appActions.setLoading(true))
+function* getPosts({ hashtag }) {
+	yield put(appActions.setLoading(true));
 	try {
 		const hastagId = yield call(getHastagIdService, hashtag);
-		console.log('iddads', hastagId.data[0].id);
-		const hastag = yield call(getHastagService, hastagId.data[0].id)
-		console.log('datos', hastag); 		
+
+		const hastag = yield call(getHastagService, hastagId.data[0].id);
+
 		yield put(postActions.setPosts(hastag.data));
 	} catch (error) {
 		console.log(error);
 	}
-	yield put(appActions.setLoading(false)) 
+	yield put(appActions.setLoading(false));
 }
 
-export default all([
-	takeLatest(Types.GET_POSTS, getPosts)
-]);
+export default all([takeLatest(Types.GET_POSTS, getPosts)]);
