@@ -1,7 +1,7 @@
 import { createActions } from 'reduxsauce'
 
 const { Types, Creators } = createActions({
-	getPosts: null,
+	getPosts: ['hashtag'],
   setPosts: ['posts']  
 })
 

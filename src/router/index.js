@@ -14,7 +14,7 @@ class Navigation extends Component {
 			<Router>
 				<Modal hideNavBar>
 					<Stack key='root'>
-						<Scene key={routes.HOME} component={Home} title='Home' />
+						<Scene key={routes.HOME} component={Home} title='InstagramClone' />
 						<Scene
 							key={routes.POST_DETAILS}							
 							component={Post}				

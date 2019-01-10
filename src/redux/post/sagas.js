@@ -9,12 +9,12 @@ import {
 	getHastag as getHastagService,	
 } from './services';
 
-function* getPosts() {	
+function* getPosts({hashtag}) {	
 	yield put(appActions.setLoading(true))
 	try {
-		const hastagId = yield call(getHastagIdService);
+		const hastagId = yield call(getHastagIdService, hashtag);
 		console.log('iddads', hastagId.data[0].id);
-		const hastag = yield call(getHastagService, hastagId)
+		const hastag = yield call(getHastagService, hastagId.data[0].id)
 		console.log('datos', hastag); 		
 		yield put(postActions.setPosts(hastag.data));
 	} catch (error) {

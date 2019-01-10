@@ -6,16 +6,12 @@ import {
 	Image,
 	TouchableWithoutFeedback,
 	TouchableOpacity,
-	ScrollView,
 	Dimensions
 } from 'react-native';
 import Video from 'react-native-video';
 import Icon from 'react-native-vector-icons/Feather';
 //Styles
 import styles from './styles';
-
-const { width } = Dimensions.get('window');
-
 class Post extends Component {
 	constructor(props) {
 		super(props);
@@ -32,7 +28,6 @@ class Post extends Component {
 		const { pressed } = this.state;
 		const {
 			onPress,
-			photo,
 			type,
 			media,
 			comments,
@@ -41,7 +36,6 @@ class Post extends Component {
 			muted,
 			onVolume
 		} = this.props;
-		console.log('imagenes', images.data);
 		return (
 			<TouchableWithoutFeedback
 				onPressIn={this.onPressed}
@@ -65,7 +59,7 @@ class Post extends Component {
 					{type === 'VIDEO' && (
 						<Video
 							ref={ref => (this.video = ref)}
-							style={styles.imageBody}
+							style={styles.videoBody}
 							source={{ uri: media }}
 							playWhenInactive={false}
 							repeat
@@ -88,7 +82,6 @@ class Post extends Component {
 							}}
 						/>
 					)}
-
 					<View style={styles.footer}>
 						<View style={styles.row}>
 							<Icon name='heart' style={styles.iconFooter} />

@@ -1,12 +1,12 @@
 import { baseUrl, token, userId, fields } from '../../config';
 
 export const getHastagId = hastag =>
-	fetch(`${baseUrl}ig_hashtag_search?${token}&${userId}&q=cali`).then(
+	fetch(`${baseUrl}ig_hashtag_search?${token}&${userId}&q=${hastag}`).then(
 		response => response.json()
 	);
-//Get Users
+//Get hastag
 export const getHastag = hastagId =>
-	fetch(`${baseUrl}17842311052064764/top_media?${token}&${userId}&${fields}`).then(
+	fetch(`${baseUrl}${hastagId}/top_media?${token}&${userId}&${fields}`).then(
 		response => response.json()
 	);
 
