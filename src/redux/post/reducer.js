@@ -8,19 +8,13 @@ import INITIAL_STATE from './initialState';
 function setPosts(state, { posts }) {
 	return Object.assign({}, { ...state, posts });
 }
-
-function setUsers(state, { users }) {
-	return Object.assign({}, { ...state, users });
-}
-
-function setComments(state, { comments }) {
-	return Object.assign({}, { ...state, comments });
+function selectPosts(state, { selectPost }) {	
+	return Object.assign({}, { ...state, selectPost });
 }
 
 const reducer = createReducer(INITIAL_STATE, {
 	[Types.SET_POSTS]: setPosts,
-	[Types.SET_USERS]: setUsers,
-	[Types.SET_COMMENTS]: setComments
+	[Types.SELECT_POST]: selectPosts
 });
 
 export default reducer;

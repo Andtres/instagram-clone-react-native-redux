@@ -1,21 +1,21 @@
 //Dependencies
-import { connect } from 'react-redux'
+import { connect } from 'react-redux';
 //Actions
-import postsActions from '../../redux/post/actions'
+import postsActions from '../../redux/post/actions';
 
-function mapStateToProps (store) {
-  return {
-		posts: store.post.posts ? store.post.posts : []
-  }
+function mapStateToProps(store) {
+	return {
+		posts: store.post.posts ? store.post.posts : [],
+		isLoading: store.app.isLoading
+	};
 }
 
 const mapDispatchToProps = dispatch => ({
-	getPosts: () => dispatch(postsActions.getPosts()),
-	getUsers: () => dispatch(postsActions.getUsers()), 	
-	getComments: () => dispatch(postsActions.getComments())
-})
+	getData: hashtag => dispatch(postsActions.getPosts(hashtag)),
+	selectPost: post => dispatch(postsActions.selectPost(post))
+});
 
 export default connect(
 	mapStateToProps,
 	mapDispatchToProps
-)
+);

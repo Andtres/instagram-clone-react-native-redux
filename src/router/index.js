@@ -12,8 +12,8 @@ class Navigation extends Component {
 		return (
 			<Router>
 				<Stack key='root'>
-					<Scene key={routes.HOME} component={Home} title='Home' />
-					<Scene key={routes.POST_DETAIL} component={Post} />
+					<Scene key={routes.HOME} component={Home} title='InstagramClone' />
+					<Scene key={routes.POST_DETAIL} component={Post} title='Detail' />
 				</Stack>
 			</Router>
 		);

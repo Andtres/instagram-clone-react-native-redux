@@ -2,9 +2,10 @@
 import EStyleSheet from 'react-native-extended-stylesheet';
 
 export default EStyleSheet.create({
-  $imageUserTop: 42,
-  withShadow : {
-    shadowColor: '#000',
+	$imageUserTop: 42,
+	$heightIcon: 10,
+	withShadow: {
+		shadowColor: '#000',
 		shadowOffset: {
 			width: 0,
 			height: 6
@@ -13,11 +14,13 @@ export default EStyleSheet.create({
 		shadowRadius: 7.49,
 
 		elevation: 12
-  },
+	},
 	container: {
 		backgroundColor: '$colors.white',
 		marginVertical: 12,
-		
+		flex: 1,
+		position: 'relative',
+		zIndex: 1		
 	},
 	top: {
 		flexDirection: 'row',
@@ -50,8 +53,13 @@ export default EStyleSheet.create({
 		height: 300,
 		resizeMode: 'cover'
 	},
+	videoBody:{
+		width: '100%',
+		height: 300,
+	},		
 	footer: {
 		flexDirection: 'row',
+		justifyContent: 'space-between',
 		paddingVertical: 10,
 		paddingHorizontal: 8
 	},
@@ -62,5 +70,8 @@ export default EStyleSheet.create({
 	},
 	txt: {
 		color: '$colors.blue'
+	},
+	row: {
+		flexDirection: 'row'
 	}
 });

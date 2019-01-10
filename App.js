@@ -12,9 +12,9 @@ const store = createStore();
 
 EStyleSheet.build(theme);
 
-function App() {
+function App() {	
 	return (
-		<Provider store={store}>
+		<Provider store={store}>			
 			<Navigation />
 		</Provider>
 	);

@@ -1,16 +1,12 @@
-//Get userName Instagram
-export const getPosts = () =>
-	fetch(
-		`https://raw.githubusercontent.com/Andtres/instagram-clone-react-native/master/src/data/posts.json`
-	).then(response => response.json());
-//Get Users
-export const getUsers = () =>
-	fetch(
-		`https://raw.githubusercontent.com/Andtres/instagram-clone-react-native/master/src/data/users.json`
-	).then(response => response.json());
-//Get comments
-export const getComments = () =>
-	fetch(
-		`https://raw.githubusercontent.com/Andtres/instagram-clone-react-native/master/src/data/comments.json`
-	).then(response => response.json());
+import { baseUrl, token, userId, fields } from '../../config';
+
+export const getHastagId = hastag =>
+	fetch(`${baseUrl}ig_hashtag_search?${token}&${userId}&q=${hastag}`).then(
+		response => response.json()
+	);
+//Get hastag
+export const getHastag = hastagId =>
+	fetch(`${baseUrl}${hastagId}/top_media?${token}&${userId}&${fields}`).then(
+		response => response.json()
+	);
 
