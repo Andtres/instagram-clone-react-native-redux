@@ -10,6 +10,7 @@
 - react-native-snap-carousel
 
 # Requirements
+
 - For development, you will only need Node.js installed on your environement.
 - $ git clone https://github.com/Andtres/instagram-clone-react-native-redux.git
 - $ cd instagram-clone-react-native-redux
